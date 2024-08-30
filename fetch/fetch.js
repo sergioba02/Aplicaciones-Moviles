@@ -1,3 +1,18 @@
+// pokemonList();
+
+// function pokemonList() {
+//     fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
+//     .then(response => response.json())
+//     .then(data => {
+//         data.results.forEach(pokemon => {
+//             console.log(pokemon.name[0].toUpperCase() + pokemon.name.slice(1));
+//         });
+//     })
+//     .catch(error => {
+//         console.error('Error:', error);
+//     });
+    
+// }
 pokemonList();
 
 function pokemonList() {
