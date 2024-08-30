@@ -1,39 +1,17 @@
-// pokemonList();
-
-// function pokemonList() {
-//     fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
-//     .then(response => response.json())
-//     .then(data => {
-//         console.log(data.results);
-//         data.results.forEach(pokemon => {
-//             console.log(pokemon.name);
-//         });
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
-    
-// }
-
 pokemonList();
 
 function pokemonList() {
-    fetch("https://pokeapi.co/api/v2/pokemon/mew")
+    fetch("https://pokeapi.co/api/v2/pokemon/4/")
     .then(response => response.json())
-    .then(data => {
-    
-    const nom = data.name;
-    const nombre = nom[0].toUpperCase() + nom.slice(1);
-    const habilidades = data.abilities.map(abilityInfo => abilityInfo.ability.name);
-    const tipo = data.types.map(abilityInfo => abilityInfo.type.name);
-    const stats = data.stats.map(abilityInfo => abilityInfo.stat.name);
+    .then(pokemon => {
+            console.log("Nombre: ",pokemon.name[0].toUpperCase() + pokemon.name.slice(1),"\n");
+            console.log("Habilidades: [", pokemon.abilities['0'].ability.name,", ", pokemon.abilities['1'].ability.name,"]\n");
+            console.log("Tipo: ", pokemon.types['0'].type.name,"\n");
+            console.log("Stats: ");
+            for(let i = 0; i <= 5; i++){
+                console.log("   ",(i+1),": [",pokemon.stats[i].stat.name,"=",pokemon.stats[i].base_stat,"]\n");
 
-    
-    console.log("Nombre: ",nombre,"\n");
-    console.log("Habilidades:", habilidades,"\n");
-    console.log("Tipo:", tipo,"\n");
-    console.log("Stats:", stats);
-
+            }
     })
     .catch(error => {
         console.error('Error:', error);
