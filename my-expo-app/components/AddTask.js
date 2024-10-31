@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Text, TextInput, TouchableOpacity, StyleSheet, View } from 'react-native'
+import CheckboxContainer from './CheckboxContainer'
 
 export default function AddTask(){
     const [listaTareas, setListaTareas] = useState([])
@@ -25,6 +26,7 @@ export default function AddTask(){
                     <Text style={styles.add}>Agregar</Text>
                 </TouchableOpacity>
             </View>
+            <CheckboxContainer array={listaTareas}/>
         </>
     )
 }
@@ -35,7 +37,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-    },
+        marginTop: -150,
+        marginBottom: -150
+        },
     tarea: {
         fontSize: 16
     },
@@ -55,10 +59,8 @@ const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
         backgroundColor: '#049afc',
-        padding: 10,
+        padding: 12,
         borderRadius: 5,
-        borderWidth: 1,
-        borderColor: '#252525'
     },
     add: {
         color: '#ffffff'

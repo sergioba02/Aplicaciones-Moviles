@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import Header from './components/Header';
 import AddTask from './components/AddTask';
-import CheckboxContainer from './components/CheckboxContainer';
 
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
       <StatusBar style="auto" />
       <Header/>
       <AddTask/>
-      <CheckboxContainer/>
     </View>
   );
 }
