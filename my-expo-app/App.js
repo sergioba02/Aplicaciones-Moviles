@@ -1,14 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import ListaTareas from './components/ListaTareas';
+import { StyleSheet, View } from 'react-native';
+import Header from './components/Header';
+import AddTask from './components/AddTask';
+import CheckboxContainer from './components/CheckboxContainer';
+
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <ListaTareas/>
-    //   <StatusBar style="auto" />
-    // </View>
-    <ListaTareas/>
+    <View style={styles.container}>
+      <StatusBar style="auto" />
+      <Header/>
+      <AddTask/>
+      <CheckboxContainer/>
+    </View>
   );
 }
 
